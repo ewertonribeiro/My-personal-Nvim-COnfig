@@ -6,6 +6,7 @@ require("nvim-tree").setup({
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
+        -- {key = "a" , action = "dir_down"}
       },
     },
   },
@@ -13,6 +14,8 @@ require("nvim-tree").setup({
     group_empty = true,
   },
   filters = {
+    custom = {"^.git$"},
     dotfiles = false,
   },
+  create_in_closed_folder = false,
 })

@@ -18,7 +18,7 @@ keymap('t', "<C-t>", "<Esc><Cmd>ToggleTerm<CR>", opts)
 ---SnipRun Plugin
 keymap('n', "<C-s>", ":SnipRun<CR>", opts) --Snip Run On Normal Mode
 keymap('v', "<C-s>", ":'<,'>SnipRun<CR>", opts) --Snip Run On Visual Mode
-keymap('n', "cs", ":SnipClose<CR>", opts) --Snip Close
+keymap('n', "cS", ":SnipClose<CR>", opts) --Snip Close
 --
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -67,15 +67,14 @@ local maps = {
             d = { ":Telescope diagnostics<CR>", "Find Diagnostics" }
         },
         d = { -- Diagnostic
-            name = "Diagnostic / Trouble",
-            d = { ":TroubleToggle<CR>", "Trouble Toggle" }
+            name = "Diagnostic",
+            d = { ":lua require'popui.diagnostics-navigator'()<CR>", "Trouble Toggle" }
         },
         l = { --LSP
             name = "+LPS",
-            r = { ":lua require('cosmic-ui').rename()<CR>", "Rename" },
-            a = { ":lua require('cosmic-ui').code_actions()<CR>", "Code Actions" },
-            A = { ":lua require('cosmic-ui').range_code_actions()<cr>", "Range Code Actions" },
-            f = { ":lua vim.lsp.buf.format {async = true}<CR>", "Format" }
+            r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
+            a = { ":CodeActionMenu<CR>", "Code Actions" },
+            f = { ":Format<CR>", "Format" }
         },
     },
     ["t"] = { --Split and Buffers Navigation

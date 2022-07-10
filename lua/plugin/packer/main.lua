@@ -25,19 +25,19 @@ return packer.startup(function(use)
 
     --Themes
     use { 'dracula/vim', as = 'dracula' }
-    use 'sainnhe/sonokai'
     use 'joshdick/onedark.vim'
     --
     --TreeSitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     --AutoPairs
     use 'jiangmiao/auto-pairs'
-    --Coc
-    -- Plug('neoclide/coc.nvim', { branch = 'release' })
     --Plenary
     use 'nvim-lua/plenary.nvim'
     --Telecope
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-media-files.nvim'
+    use 'nvim-telescope/telescope-github.nvim'
+    use 'xiyaowong/telescope-emoji.nvim'
     --Web Dev Icons
     use 'kyazdani42/nvim-web-devicons' -- optional, for file icons
     --Nvim Tree
@@ -63,34 +63,30 @@ return packer.startup(function(use)
     --Trouble
     use 'folke/trouble.nvim'
 
-    --LSP ZERO
-    --Null LS
-    use 'jose-elias-alvarez/null-ls.nvim'
     --LPS INSTALLER
     use "williamboman/nvim-lsp-installer"
     --Lsp-Config
     use "neovim/nvim-lspconfig"
-    --LSP-ZERO
-    use 'VonHeikemen/lsp-zero.nvim'
+    --Null LS
+    use 'jose-elias-alvarez/null-ls.nvim'
+
     --Nvim-Cmp
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/cmp-path'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-nvim-lua'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
-    use 'quangnguyen30192/cmp-nvim-ultisnips'
+    use 'hrsh7th/nvim-cmp' -- The main one
+    use 'hrsh7th/cmp-nvim-lsp' --Lsp plugin source
+    use 'hrsh7th/cmp-buffer' --Buffer plugin source
+    use 'hrsh7th/cmp-path' --Path plugin source 
+    use 'David-Kunz/cmp-npm' -- Npm Plugin Source
+    use 'saadparwaiz1/cmp_luasnip' --LuaSnip Plugin source
+
+
     --Snippets
     use 'L3MON4D3/LuaSnip'
-    use 'rafamadriz/friendly-snippets'
+    -- use 'rafamadriz/friendly-snippets'
     --NVIM DAP
     use 'mfussenegger/nvim-dap'
     --COSMIC UI
-    use 'CosmicNvim/cosmic-ui'
-    use 'MunifTanjim/nui.nvim'
+    -- use 'CosmicNvim/cosmic-ui'
+    -- use 'MunifTanjim/nui.nvim'
     --LSP  SIGNATURE
     use 'ray-x/lsp_signature.nvim'
     --LazyGit
@@ -98,4 +94,53 @@ return packer.startup(function(use)
     --Markdown Previews
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+    --Nvim Light Bulb
+    use {
+        'kosayoda/nvim-lightbulb',
+        requires = 'antoinemadec/FixCursorHold.nvim',
+    }
+
+    --Code Action Menu
+    use({ 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' })
+
+    --Go To Previews
+    use 'rmagatti/goto-preview'
+
+    --Nvim Surround
+    use 'kylechui/nvim-surround'
+
+    --Colorizer
+    use 'norcalli/nvim-colorizer.lua'
+    --Color Picker
+    use "ziontee113/color-picker.nvim"
+    --Collapse Folders
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
+    --Editor config
+    use 'gpanders/editorconfig.nvim'
+    --Popup ui
+    use 'hood/popui.nvim'
+    use 'RishabhRD/popfix'
+    vim.ui.select = require "popui.ui-overrider"
+    vim.ui.input = require "popui.input-overrider"
+
+    --Icon Picker
+    use "stevearc/dressing.nvim"
+    use({
+        "ziontee113/icon-picker.nvim",
+        config = function()
+            require("icon-picker")
+        end,
+    })
+     local opts = { noremap = true, silent = true }
+
+     vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
+     vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
+     vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
+
+
+
+     --Snip Run
+     use 'michaelb/sniprun'
 end)

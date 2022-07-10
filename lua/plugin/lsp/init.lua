@@ -1,16 +1,8 @@
-require("nvim-lsp-installer").setup({
-  automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
-  ui = {
-    icons = {
-      server_installed = "✓",
-      server_pending = "➜",
-      server_uninstalled = "✗"
-    }
-  }
-})
+local status_ok, _ = pcall(require, "lspconfig")
+if not status_ok then
+	return
+end
 
-
----FORMAT ON SAVE
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
-
-
+require("plugin.lsp.lsp-installer")
+require("plugin.lsp.handlers").setup()
+require("plugin.null_ls")
