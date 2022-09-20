@@ -29,6 +29,7 @@ return packer.startup(function(use)
     use 'olimorris/onedarkpro.nvim'
     use 'folke/tokyonight.nvim'
     use  "ellisonleao/gruvbox.nvim" 
+    use 'getomni/neovim'
     --TreeSitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     --AutoPairs
