@@ -15,7 +15,7 @@ require("plugin.lualine")
 --Lsp
 require("plugin.lsp")
 --Null Ls
--- require("plugin.null_ls")
+ require("plugin.null_ls")
 --Signature
 -- require("plugin.signature")
 --Lsp-Zero
@@ -32,7 +32,7 @@ require("plugin.packer.main")
 require("plugin.telescope")
 ---Notify
 require("notify").setup({
-  background_colour = "#000000",
+background_colour = "#000000",
   my_cool_setting = true,
 })
 --CursorHoldFix

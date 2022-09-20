@@ -139,11 +139,6 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
   },
-  ["dressing.nvim"] = {
-    loaded = true,
-    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/dressing.nvim",
-    url = "https://github.com/stevearc/dressing.nvim"
-  },
   ["editorconfig.nvim"] = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
@@ -158,12 +153,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/goto-preview",
     url = "https://github.com/rmagatti/goto-preview"
-  },
-  ["icon-picker.nvim"] = {
-    config = { "\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16icon-picker\frequire\0" },
-    loaded = true,
-    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/icon-picker.nvim",
-    url = "https://github.com/ziontee113/icon-picker.nvim"
   },
   ["lazygit.nvim"] = {
     loaded = true,
@@ -295,11 +284,6 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
   },
-  sniprun = {
-    loaded = true,
-    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/sniprun",
-    url = "https://github.com/michaelb/sniprun"
-  },
   ["telescope-emoji.nvim"] = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/telescope-emoji.nvim",
@@ -342,10 +326,6 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: icon-picker.nvim
-time([[Config for icon-picker.nvim]], true)
-try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16icon-picker\frequire\0", "config", "icon-picker.nvim")
-time([[Config for icon-picker.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

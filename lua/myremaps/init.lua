@@ -74,7 +74,7 @@ local maps = {
             name = "+LPS",
             r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
             a = { ":CodeActionMenu<CR>", "Code Actions" },
-            f = { ":Format<CR>", "Format" }
+            f = { ":lua vim.lsp.buf.formatting_sync()<CR>", "Format" }
         },
     },
     ["t"] = { --Split and Buffers Navigation

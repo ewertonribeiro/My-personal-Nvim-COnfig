@@ -26,7 +26,9 @@ return packer.startup(function(use)
     --Themes
     use { 'dracula/vim', as = 'dracula' }
     use 'joshdick/onedark.vim'
-    --
+    use 'olimorris/onedarkpro.nvim'
+    use 'folke/tokyonight.nvim'
+    use  "ellisonleao/gruvbox.nvim" 
     --TreeSitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     --AutoPairs
