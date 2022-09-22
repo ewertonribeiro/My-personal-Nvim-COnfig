@@ -72,6 +72,7 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig"
     --Null LS
     use 'jose-elias-alvarez/null-ls.nvim'
+    use 'MunifTanjim/prettier.nvim'
 
     --Nvim-Cmp
     use 'hrsh7th/nvim-cmp' -- The main one
@@ -95,8 +96,8 @@ return packer.startup(function(use)
     --LazyGit
     use 'kdheepak/lazygit.nvim'
     --Markdown Previews
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    -- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+    --     setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     --Nvim Light Bulb
     use {
@@ -130,12 +131,6 @@ return packer.startup(function(use)
 
     --Icon Picker
     use "stevearc/dressing.nvim"
-    use({
-        "ziontee113/icon-picker.nvim",
-        config = function()
-            require("icon-picker")
-        end,
-    })
      local opts = { noremap = true, silent = true }
 
      vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
