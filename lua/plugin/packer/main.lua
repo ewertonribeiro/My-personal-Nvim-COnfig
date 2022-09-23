@@ -58,7 +58,7 @@ return packer.startup(function(use)
     --lualine
     use 'nvim-lualine/lualine.nvim'
     --Togglterm
-    use { 'akinsho/toggleterm.nvim', tag = 'v1.*' }
+    use { 'akinsho/toggleterm.nvim', tag = '*' }
     --Popup
     use 'nvim-lua/popup.nvim'
     --Notify

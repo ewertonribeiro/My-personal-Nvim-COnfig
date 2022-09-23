@@ -53,6 +53,8 @@ require'nvim-treesitter.configs'.setup {
 enable = true,
 },
 }
+--Terminal
+require('plugin.toggleterm')
 -- Folder Collapse
 -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
