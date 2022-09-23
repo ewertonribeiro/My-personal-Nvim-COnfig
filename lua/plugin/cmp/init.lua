@@ -52,11 +52,12 @@ cmp.setup {
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body) -- For `luasnip` users.
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         end,
     },
     mapping = {
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<Up>"] = cmp.mapping.select_prev_item(),
+        ["<Down>"] = cmp.mapping.select_next_item(),
         ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -107,6 +108,7 @@ cmp.setup {
                 nvim_lsp = "[LSP]",
                 nvim_lua = "[NVIM_LUA]",
                 luasnip = "[LuaSnip]",
+                vssnip = "[VS-SNIP]",
                 buffer = "[File]",
                 path = "[Path]",
             })[entry.source.name]
@@ -120,6 +122,8 @@ cmp.setup {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "Crates" },
+        {name = "vssnip"}
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,

@@ -1,3 +1,4 @@
+--
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -28,7 +29,7 @@ return packer.startup(function(use)
     use 'joshdick/onedark.vim'
     use 'olimorris/onedarkpro.nvim'
     use 'folke/tokyonight.nvim'
-    use  "ellisonleao/gruvbox.nvim" 
+    use "ellisonleao/gruvbox.nvim"
     use 'getomni/neovim'
     --TreeSitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -78,14 +79,23 @@ return packer.startup(function(use)
     use 'hrsh7th/nvim-cmp' -- The main one
     use 'hrsh7th/cmp-nvim-lsp' --Lsp plugin source
     use 'hrsh7th/cmp-buffer' --Buffer plugin source
-    use 'hrsh7th/cmp-path' --Path plugin source 
+    use 'hrsh7th/cmp-path' --Path plugin source
     use 'David-Kunz/cmp-npm' -- Npm Plugin Source
     use 'saadparwaiz1/cmp_luasnip' --LuaSnip Plugin source
-
+    use 'hrsh7th/cmp-vsnip' --VS SNIP
+    use 'hrsh7th/vim-vsnip' --VS SNIP
+    use {
+        'saecki/crates.nvim',
+        tag = 'v0.2.1',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require("crates").setup { name = "Crates" }
+        end,
+    }
 
     --Snippets
     use 'L3MON4D3/LuaSnip'
-    -- use 'rafamadriz/friendly-snippets'
+    use 'rafamadriz/friendly-snippets'
     --NVIM DAP
     use 'mfussenegger/nvim-dap'
     --COSMIC UI
@@ -131,14 +141,14 @@ return packer.startup(function(use)
 
     --Icon Picker
     use "stevearc/dressing.nvim"
-     local opts = { noremap = true, silent = true }
+    local opts = { noremap = true, silent = true }
 
-     vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
-     vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
-     vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
+    vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
+    vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
+    vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
 
 
 
-     --Snip Run
-     use 'michaelb/sniprun'
+    --Snip Run
+    use 'michaelb/sniprun'
 end)
