@@ -52,7 +52,7 @@ cmp.setup {
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body) -- For `luasnip` users.
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         end,
     },
     mapping = {
@@ -68,6 +68,7 @@ cmp.setup {
         },
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
+        -- ["<TAB>"] = cmp.mapping.confirm { select = true },
         ["<CR>"] = cmp.mapping.confirm { select = true },
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -85,18 +86,18 @@ cmp.setup {
             "i",
             "s",
         }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, {
-            "i",
-            "s",
-        }),
+        -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+        --     if cmp.visible() then
+        --         cmp.select_prev_item()
+        --     elseif luasnip.jumpable(-1) then
+        --         luasnip.jump(-1)
+        --     else
+        --         fallback()
+        --     end
+        -- end, {
+        --     "i",
+        --     "s",
+        -- }),
     },
     formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -123,7 +124,7 @@ cmp.setup {
         { name = "buffer" },
         { name = "path" },
         { name = "Crates" },
-        {name = "vssnip"}
+        { name = "vssnip" }
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,

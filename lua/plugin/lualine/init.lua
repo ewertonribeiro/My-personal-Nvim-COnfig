@@ -3,7 +3,7 @@
 -- require('lualine').setup {
 --    options = {
 --      icons_enabled = true,
---      theme = 'horizon',
+--      theme = 'gruvbox_dark',
 --      component_separators = { left = '', right = '' },
 --      section_separators = { left = '', right = '' },
 --      disabled_filetypes = {},
@@ -29,8 +29,8 @@
 --    tabline = {},
 --    extensions = {}
 --  }
---
---
+
+
  -----------------------------------------------------------------------------
 -- Eviline config for lualine
 -- Author: shadmansaleh
@@ -253,8 +253,8 @@ ins_left {
 
  -- Now don't forget to initialize lualine
  lualine.setup(config)
-
-
+--
+--
 --
 
 --Avaliable themes => ayu_dark,ayu_mirage , dracula , gruvbox

@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -134,10 +139,11 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/color-picker.nvim",
     url = "https://github.com/ziontee113/color-picker.nvim"
   },
-  dracula = {
+  ["crates.nvim"] = {
+    config = { "\27LJ\2\nG\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tname\vCrates\nsetup\vcrates\frequire\0" },
     loaded = true,
-    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/dracula",
-    url = "https://github.com/dracula/vim"
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/crates.nvim",
+    url = "https://github.com/saecki/crates.nvim"
   },
   ["dressing.nvim"] = {
     loaded = true,
@@ -148,6 +154,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
     url = "https://github.com/gpanders/editorconfig.nvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -307,6 +318,11 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
   },
+  sonokai = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
+  },
   ["telescope-emoji.nvim"] = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/telescope-emoji.nvim",
@@ -342,6 +358,11 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/which-key.nvim",
@@ -350,6 +371,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: crates.nvim
+time([[Config for crates.nvim]], true)
+try_loadstring("\27LJ\2\nG\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tname\vCrates\nsetup\vcrates\frequire\0", "config", "crates.nvim")
+time([[Config for crates.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

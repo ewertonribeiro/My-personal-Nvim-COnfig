@@ -25,12 +25,14 @@ return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
 
     --Themes
-    use { 'dracula/vim', as = 'dracula' }
+    use 'Mofiqul/dracula.nvim'
+    -- use { 'dracula/vim', as = 'dracula' }
     use 'joshdick/onedark.vim'
     use 'olimorris/onedarkpro.nvim'
     use 'folke/tokyonight.nvim'
     use "ellisonleao/gruvbox.nvim"
     use 'getomni/neovim'
+    use 'sainnhe/sonokai'
     --TreeSitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     --AutoPairs
@@ -139,13 +141,13 @@ return packer.startup(function(use)
     vim.ui.select = require "popui.ui-overrider"
     vim.ui.input = require "popui.input-overrider"
 
-    --Icon Picker
     use "stevearc/dressing.nvim"
-    local opts = { noremap = true, silent = true }
-
-    vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
-    vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
-    vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
+    -- --Icon Picker
+    -- local opts = { noremap = true, silent = true }
+    --
+    -- vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
+    -- vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
+    -- vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
 
 
 
