@@ -123,7 +123,6 @@ cmp.setup {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-        { name = "Crates" },
         { name = "vssnip" }
     },
     confirm_opts = {

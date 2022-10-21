@@ -9,6 +9,7 @@ telescope.load_extension('media_files')
 telescope.load_extension("notify")
 telescope.load_extension("gh")
 telescope.load_extension("emoji")
+telescope.load_extension('project')
 
 local actions = require "telescope.actions"
 

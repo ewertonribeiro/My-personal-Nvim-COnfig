@@ -1,3 +1,5 @@
+--Packer
+require("plugin.packer.main")
 --Nvim Tree
 require("plugin.nvimtree")
 --Whick Key
@@ -14,6 +16,9 @@ require("plugin.alpha")
 require("plugin.lualine")
 --Lsp
 require("plugin.lsp")
+--MASON
+require("mason").setup()
+require("mason-lspconfig").setup()
 --Null Ls
  require("plugin.null_ls")
 --Signature
@@ -26,8 +31,6 @@ require("plugin.trouble.init")
 require("plugin.cmp")
 -- --Snip Run
 -- require("plugin.sniprun")
---Packer
-require("plugin.packer.main")
 --Telescope
 require("plugin.telescope")
 ---Notify
@@ -50,8 +53,8 @@ require("plugin.colorpicker")
 --TreeSiter
 require'nvim-treesitter.configs'.setup {
   highlight = {
-enable = true,
-},
+    enable = true,
+    },
 }
 --Terminal
 require('plugin.toggleterm')

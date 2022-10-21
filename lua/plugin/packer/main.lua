@@ -44,6 +44,7 @@ return packer.startup(function(use)
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-github.nvim'
     use 'xiyaowong/telescope-emoji.nvim'
+    use 'nvim-telescope/telescope-project.nvim'
     --Web Dev Icons
     use 'kyazdani42/nvim-web-devicons' -- optional, for file icons
     --Nvim Tree
@@ -73,6 +74,8 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer"
     --Lsp-Config
     use "neovim/nvim-lspconfig"
+    use "williamboman/mason.nvim" 
+    use "williamboman/mason-lspconfig.nvim"
     --Null LS
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'MunifTanjim/prettier.nvim'
@@ -86,14 +89,6 @@ return packer.startup(function(use)
     use 'saadparwaiz1/cmp_luasnip' --LuaSnip Plugin source
     use 'hrsh7th/cmp-vsnip' --VS SNIP
     use 'hrsh7th/vim-vsnip' --VS SNIP
-    use {
-        'saecki/crates.nvim',
-        tag = 'v0.2.1',
-        requires = { 'nvim-lua/plenary.nvim' },
-        config = function()
-            require("crates").setup { name = "Crates" }
-        end,
-    }
 
     --Snippets
     use 'L3MON4D3/LuaSnip'

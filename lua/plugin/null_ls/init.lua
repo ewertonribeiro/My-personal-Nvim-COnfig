@@ -1,6 +1,6 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
-  return
+    return
 end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -9,16 +9,30 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup {
-  debug = false,
-  sources = {
-    formatting.prettier,
-    -- formatting.eslint,
-    diagnostics.eslint,
-    -- diagnostics.stylelint -- Css Diagnostics
-    -- formatting.black.with { extra_args = { "--fast" } },
-    -- -- formatting.yapf,
-    -- formatting.stylua,
-    -- diagnostics.flake8,
-  },
+    debug = false,
+    sources = {
+        -- formatting.prettierd,
+        formatting.prettierd.with {
+            extra_args = {
+                "--config-precedence",
+                "prefer-file", -- allow defaults but respect project specific configuration.
+            },
+            filetypes = {
+                "javascript", "javascriptreact", "typescriptreact", "typescript", "css", "scss", "html", "json", "yaml",
+                "markdown", "graphql", "md", "txt",
+            },
+        },
+        --   formatting.prettier.with ({
+        --       filetypes = {
+        -- 	"javascript","javascriptreact","typescriptreact","typescript","css","scss","html","json","yaml","markdown","graphql","md","txt",
+        -- },
+        --   }),
+        -- formatting.eslint,
+        -- diagnostics.eslint,
+        -- diagnostics.stylelint -- Css Diagnostics
+        -- formatting.black.with { extra_args = { "--fast" } },
+        -- -- formatting.yapf,
+        -- formatting.stylua,
+        -- diagnostics.flake8,
+    },
 }
-
