@@ -57,6 +57,19 @@ return packer.startup(function(use)
     use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
     --Comment
     use 'numToStr/Comment.nvim'
+    --Todo Comment
+    -- Lua
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
     --Alpha Nvim
     use 'goolord/alpha-nvim'
     --lualine
@@ -74,7 +87,7 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer"
     --Lsp-Config
     use "neovim/nvim-lspconfig"
-    use "williamboman/mason.nvim" 
+    use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     --Null LS
     use 'jose-elias-alvarez/null-ls.nvim'
@@ -89,6 +102,7 @@ return packer.startup(function(use)
     use 'saadparwaiz1/cmp_luasnip' --LuaSnip Plugin source
     use 'hrsh7th/cmp-vsnip' --VS SNIP
     use 'hrsh7th/vim-vsnip' --VS SNIP
+    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' } --Tabnine
 
     --Snippets
     use 'L3MON4D3/LuaSnip'
@@ -137,15 +151,24 @@ return packer.startup(function(use)
     vim.ui.input = require "popui.input-overrider"
 
     use "stevearc/dressing.nvim"
-    -- --Icon Picker
-    -- local opts = { noremap = true, silent = true }
-    --
-    -- vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
-    -- vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
-    -- vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
+    --Noice
+    -- Packer
+    use({
+        "folke/noice.nvim",
+        event = "VimEnter",
+        config = function()
+            require("noice").setup()
+        end,
+        requires = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    })
 
 
 
-    --Snip Run
-    use 'michaelb/sniprun'
 end)

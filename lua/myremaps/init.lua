@@ -15,11 +15,10 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap('n', "<C-t>", "<Cmd>execute v:count . 'ToggleTerm'<CR>", opts)
 keymap('t', "<C-t>", "<Esc><Cmd>ToggleTerm<CR>", opts)
 
----SnipRun Plugin
-keymap('n', "<C-s>", ":SnipRun<CR>", opts) --Snip Run On Normal Mode
-keymap('v', "<C-s>", ":'<,'>SnipRun<CR>", opts) --Snip Run On Visual Mode
-keymap('n', "cS", ":SnipClose<CR>", opts) --Snip Close
---
+---Save <C-s>
+keymap('n', "<C-s>", ":w<CR>", opts) --Snip Run On Normal Mode
+
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
