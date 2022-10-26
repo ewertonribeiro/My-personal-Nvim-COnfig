@@ -53,6 +53,8 @@ return packer.startup(function(use)
     use 'folke/which-key.nvim'
     --GitSigns
     use 'lewis6991/gitsigns.nvim'
+    --Git Blame
+    use 'f-person/git-blame.nvim'
     --Bufferline
     use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
     --Comment
