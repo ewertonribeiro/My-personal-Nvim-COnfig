@@ -171,6 +171,13 @@ return packer.startup(function(use)
         }
     })
 
+    --Virtual type nottations
+    use 'jubnzv/virtual-types.nvim'
 
+    --SHADE
+    use 'sunjon/shade.nvim'
+
+    --WINLINE
+    use 'windwp/windline.nvim'
 
 end)

@@ -11,28 +11,8 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
     debug = false,
     sources = {
-        -- formatting.prettierd,
-        formatting.prettierd.with {
-            extra_args = {
-                "--config-precedence",
-                "prefer-file", -- allow defaults but respect project specific configuration.
-            },
-            filetypes = {
-                "javascript", "javascriptreact", "typescriptreact", "typescript", "css", "scss", "html", "json", "yaml",
-                "markdown", "graphql", "md", "txt",
-            },
-        },
-        --   formatting.prettier.with ({
-        --       filetypes = {
-        -- 	"javascript","javascriptreact","typescriptreact","typescript","css","scss","html","json","yaml","markdown","graphql","md","txt",
-        -- },
-        --   }),
-        -- formatting.eslint,
+        formatting.prettierd,
         -- diagnostics.eslint,
         -- diagnostics.stylelint -- Css Diagnostics
-        -- formatting.black.with { extra_args = { "--fast" } },
-        -- -- formatting.yapf,
-        -- formatting.stylua,
-        -- diagnostics.flake8,
     },
 }

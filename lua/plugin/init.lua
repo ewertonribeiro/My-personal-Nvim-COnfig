@@ -13,7 +13,9 @@ require("plugin.comment")
 --Alpha
 require("plugin.alpha")
 --lualine
-require("plugin.lualine")
+-- require("plugin.lualine")
+--windline
+require('wlsample.airline_anim')
 --Lsp
 require("plugin.lsp")
 --MASON
@@ -60,3 +62,22 @@ require'nvim-treesitter.configs'.setup {
 require('plugin.toggleterm')
 --UFo
 require('plugin.ufo')
+
+
+
+---Virtual Type
+-- require'nvim_lsp'.ocamllsp.setup{
+--     on_attach=require'virtualtypes'.on_attach
+-- }
+
+--Shade 
+require'shade'.setup({
+  overlay_opacity = 50,
+  opacity_step = 1,
+  keys = {
+    brightness_up    = '<C-Up>',
+    brightness_down  = '<C-Down>',
+    toggle           = '<Leader>s',
+  }
+})
+

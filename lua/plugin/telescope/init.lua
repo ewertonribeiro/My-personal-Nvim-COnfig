@@ -87,19 +87,19 @@ telescope.setup {
     },
     pickers = {
         find_files = {
-            -- theme = "dropdown",
+            theme = "dropdown",
             winblend = 10,
         },
         old_files = {
-            -- theme = "dropdown",
+            theme = "dropdown",
             winblend = 10,
         },
         live_grep = {
-            -- theme = "dropdown",
+            theme = "dropdown",
             winblend = 10,
         },
         diagnostics = {
-            -- theme = "dropdown",
+            theme = "dropdown",
             winblend = 10,
         }
         -- Default configuration for builtin pickers goes here:
