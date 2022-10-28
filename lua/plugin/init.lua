@@ -15,7 +15,7 @@ require("plugin.alpha")
 --lualine
 -- require("plugin.lualine")
 --windline
-require('wlsample.airline_anim')
+require('wlsample.evil_line')
 --Lsp
 require("plugin.lsp")
 --MASON

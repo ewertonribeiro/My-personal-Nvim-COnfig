@@ -17,8 +17,12 @@ keymap('t', "<C-t>", "<Esc><Cmd>ToggleTerm<CR>", opts)
 
 ---Save <C-s>
 keymap('n', "<C-s>", ":w<CR>", opts) --Snip Run On Normal Mode
+---Close <C-q>
+keymap('n', "<C-q>", ":q<CR>", opts) --Snip Run On Normal Mode
+keymap('n', "<C-q>!", ":q!<CR>", opts) --Snip Run On Normal Mode
 
-
+---Prettier
+keymap('n', '<C-p>', ":Prettier<CR>", opts) --FORMAT WITH PRETTIER
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -37,7 +41,9 @@ keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
@@ -56,6 +62,10 @@ local maps = {
             name = "Tree Explorer",
             e = { ":NvimTreeToggle<CR>", "NVIM TREE Toggle" },
             f = { ":NvimTreeFocus<CR>", "NVIM TREE Focus" }
+        },
+        b = { --- Buffers
+            name = "Buffers",
+            j    = { ":BufferLinePick<CR>", "Jump Buffer"},
         },
         f = { --TELESCOPE
             name = "Telescope",

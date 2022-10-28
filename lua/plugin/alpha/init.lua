@@ -150,7 +150,8 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
     dashboard.button("e", "פּ  > Explorer", ":NvimTreeToggle<CR>"),
     dashboard.button("n", "  > New file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("<leader>ff", "  > Find file", ":Telescope find_files<CR>"),
+    dashboard.button("g", "  > Lazygit", ":LazyGit<CR>"),
+    dashboard.button("f", "  > Find file", ":Telescope find_files<CR>"),
     dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
     dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
     dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),

@@ -26,13 +26,14 @@ return packer.startup(function(use)
 
     --Themes
     use 'Mofiqul/dracula.nvim'
-    -- use { 'dracula/vim', as = 'dracula' }
     use 'joshdick/onedark.vim'
     use 'olimorris/onedarkpro.nvim'
     use 'folke/tokyonight.nvim'
     use "ellisonleao/gruvbox.nvim"
     use 'getomni/neovim'
     use 'sainnhe/sonokai'
+    use 'tanvirtin/monokai.nvim'
+    use 'arcticicestudio/nord-vim'
     --TreeSitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     --AutoPairs
@@ -179,5 +180,10 @@ return packer.startup(function(use)
 
     --WINLINE
     use 'windwp/windline.nvim'
+    ---Markdown previewer
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
 end)
