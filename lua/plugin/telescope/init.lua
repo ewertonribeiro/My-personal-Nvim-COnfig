@@ -15,11 +15,9 @@ local actions = require "telescope.actions"
 
 telescope.setup {
     defaults = {
-
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "smart" },
-
         mappings = {
             i = {
                 ["<C-n>"] = actions.cycle_history_next,
@@ -88,6 +86,7 @@ telescope.setup {
     pickers = {
         find_files = {
             theme = "dropdown",
+            previewer = false,
             winblend = 10,
         },
         old_files = {
@@ -95,7 +94,7 @@ telescope.setup {
             winblend = 10,
         },
         live_grep = {
-            theme = "dropdown",
+            theme = "ivy",
             winblend = 10,
         },
         diagnostics = {

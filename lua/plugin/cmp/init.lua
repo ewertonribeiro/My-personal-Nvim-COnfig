@@ -70,7 +70,7 @@ cmp.setup {
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
         -- ["<TAB>"] = cmp.mapping.confirm { select = true },
-        ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<CR>"] = cmp.mapping.confirm { select = false },
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -107,8 +107,8 @@ cmp.setup {
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             vim_item.menu = ({
-                cmp_tabnine = "[TABNINE]",
                 nvim_lsp = "[LSP]",
+                cmp_tabnine = "[TABNINE]",
                 nvim_lua = "[NVIM_LUA]",
                 luasnip = "[LuaSnip]",
                 vssnip = "[VS-SNIP]",
@@ -119,9 +119,9 @@ cmp.setup {
         end,
     },
     sources = {
-        { name = "npm", keyword_length = 2 },
+        { name = "nvim_lsp" ,keyword_length = 0 },
+        { name = "npm", keyword_length = 1 },
         { name = 'cmp_tabnine' },
-        { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "luasnip" },
         { name = "buffer" },

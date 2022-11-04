@@ -1,4 +1,4 @@
---
+-- local noice_config = require("plugin.noice")
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -25,6 +25,7 @@ return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
 
     --Themes
+    -- use 'dracula/vim'
     use 'Mofiqul/dracula.nvim'
     use 'joshdick/onedark.vim'
     use 'olimorris/onedarkpro.nvim'
@@ -33,7 +34,17 @@ return packer.startup(function(use)
     use 'getomni/neovim'
     use 'sainnhe/sonokai'
     use 'tanvirtin/monokai.nvim'
-    use 'arcticicestudio/nord-vim'
+    use 'shaunsingh/nord.nvim'
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+            require("catppuccin").setup {
+                flavour = "macchiato" -- mocha, macchiato, frappe, latte
+            }
+            vim.api.nvim_command "colorscheme catppuccin"
+        end
+    }
     --TreeSitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     --AutoPairs
@@ -61,7 +72,6 @@ return packer.startup(function(use)
     --Comment
     use 'numToStr/Comment.nvim'
     --Todo Comment
-    -- Lua
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
@@ -94,8 +104,8 @@ return packer.startup(function(use)
     use "williamboman/mason-lspconfig.nvim"
     --Null LS
     use 'jose-elias-alvarez/null-ls.nvim'
+    ---Prettierd
     use 'MunifTanjim/prettier.nvim'
-
     --Nvim-Cmp
     use 'hrsh7th/nvim-cmp' -- The main one
     use 'hrsh7th/cmp-nvim-lsp' --Lsp plugin source
@@ -112,25 +122,16 @@ return packer.startup(function(use)
     use 'rafamadriz/friendly-snippets'
     --NVIM DAP
     use 'mfussenegger/nvim-dap'
-    --COSMIC UI
-    -- use 'CosmicNvim/cosmic-ui'
-    -- use 'MunifTanjim/nui.nvim'
     --LSP  SIGNATURE
     use 'ray-x/lsp_signature.nvim'
     --LazyGit
     use 'kdheepak/lazygit.nvim'
-    --Markdown Previews
-    -- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-    --     setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     --Nvim Light Bulb
     use {
         'kosayoda/nvim-lightbulb',
         requires = 'antoinemadec/FixCursorHold.nvim',
     }
-
-    --Code Action Menu
-    use({ 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' })
 
     --Go To Previews
     use 'rmagatti/goto-preview'
@@ -140,8 +141,6 @@ return packer.startup(function(use)
 
     --Colorizer
     use 'norcalli/nvim-colorizer.lua'
-    --Color Picker
-    use "ziontee113/color-picker.nvim"
     --Collapse Folders
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
@@ -155,28 +154,17 @@ return packer.startup(function(use)
 
     use "stevearc/dressing.nvim"
     --Noice
-    -- Packer
     use({
         "folke/noice.nvim",
         event = "VimEnter",
         config = function()
-            require("noice").setup()
+            require("noice").setup({})
         end,
         requires = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
         }
     })
-
-    --Virtual type nottations
-    use 'jubnzv/virtual-types.nvim'
-
-    --SHADE
-    use 'sunjon/shade.nvim'
 
     --WINLINE
     use 'windwp/windline.nvim'

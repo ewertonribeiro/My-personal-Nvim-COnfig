@@ -139,11 +139,6 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["color-picker.nvim"] = {
-    loaded = true,
-    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/color-picker.nvim",
-    url = "https://github.com/ziontee113/color-picker.nvim"
-  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/dracula.nvim",
@@ -163,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["git-blame.nvim"] = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -194,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -204,18 +209,28 @@ _G.packer_plugins = {
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["monokai.nvim"] = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/monokai.nvim",
+    url = "https://github.com/tanvirtin/monokai.nvim"
+  },
   neovim = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/getomni/neovim"
   },
   ["noice.nvim"] = {
-    config = { "\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nnoice\frequire\0" },
+    config = { "\27LJ\2\n9\0\0\3\1\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0-\2\0\0B\0\2\1K\0\1\0\0\0\nsetup\nnoice\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/opt/noice.nvim",
     url = "https://github.com/folke/noice.nvim"
+  },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
   },
   ["nui.nvim"] = {
     loaded = true,
@@ -231,14 +246,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-code-action-menu"] = {
-    commands = { "CodeActionMenu" },
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/home/ewerton/.local/share/nvim/site/pack/packer/opt/nvim-code-action-menu",
-    url = "https://github.com/weilbith/nvim-code-action-menu"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -400,6 +407,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
+  },
+  ["windline.nvim"] = {
+    loaded = true,
+    path = "/home/ewerton/.local/share/nvim/site/pack/packer/start/windline.nvim",
+    url = "https://github.com/windwp/windline.nvim"
   }
 }
 
@@ -408,12 +420,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CodeActionMenu lua require("packer.load")({'nvim-code-action-menu'}, { cmd = "CodeActionMenu", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

@@ -82,7 +82,7 @@ local maps = {
         l = { --LSP
             name = "+LPS",
             r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
-            a = { ":CodeActionMenu<CR>", "Code Actions" },
+            a = { ":lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
             f = { ":lua vim.lsp.buf.format({ timeout_ms = 1500 })<CR>", "Format" }
         },
     },

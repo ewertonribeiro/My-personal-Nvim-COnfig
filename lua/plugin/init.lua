@@ -1,5 +1,15 @@
 --Packer
 require("plugin.packer.main")
+--UFo
+require('plugin.ufo')
+--Lsp
+require("plugin.lsp")
+--MASON
+require("mason").setup()
+require("mason-lspconfig").setup()
+--Null Ls
+require("plugin.null_ls")
+require("plugin.null_ls.prettier")
 --Nvim Tree
 require("plugin.nvimtree")
 --Whick Key
@@ -13,32 +23,24 @@ require("plugin.comment")
 --Alpha
 require("plugin.alpha")
 --lualine
--- require("plugin.lualine")
+require("plugin.lualine")
 --windline
-require('wlsample.evil_line')
---Lsp
-require("plugin.lsp")
---MASON
-require("mason").setup()
-require("mason-lspconfig").setup()
---Null Ls
- require("plugin.null_ls")
+-- require('wlsample.airline_anim')
 --Signature
- -- require("plugin.signature")
---Lsp-Zero
--- require("plugin.lsp-zero")
+-- require("plugin.signature")
 --Trouble
 require("plugin.trouble.init")
 --Nvim cmp
 require("plugin.cmp")
--- --Snip Run
--- require("plugin.sniprun")
 --Telescope
 require("plugin.telescope")
 ---Notify
 require("notify").setup({
-background_colour = "#000000",
- my_cool_setting = true,
+    background_colour = "#000000",
+    my_cool_setting = true,
+    timeout = 200,
+    minimum_width = 30,
+    top_down = false,
 })
 --CursorHoldFix
 vim.g.cursorhold_updatetime = 100
@@ -46,38 +48,17 @@ vim.g.cursorhold_updatetime = 100
 require("plugin.lightbulb")
 --Go To Preview
 require("plugin.gotopreview")
---Surround
--- require("plugin.surround")
 --Colorizer
 require('colorizer').setup()
---Color Picker
-require("plugin.colorpicker")
 --TreeSiter
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
+require 'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
     },
 }
 --Terminal
 require('plugin.toggleterm')
---UFo
-require('plugin.ufo')
-
-
-
----Virtual Type
--- require'nvim_lsp'.ocamllsp.setup{
---     on_attach=require'virtualtypes'.on_attach
--- }
-
---Shade 
-require'shade'.setup({
-  overlay_opacity = 50,
-  opacity_step = 1,
-  keys = {
-    brightness_up    = '<C-Up>',
-    brightness_down  = '<C-Down>',
-    toggle           = '<Leader>s',
-  }
-})
-
+---Surround
+require("plugin.surround")
+--Noice
+-- require("plugin.noice")

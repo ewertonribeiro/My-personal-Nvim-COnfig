@@ -15,7 +15,7 @@ M.setup = function()
 
     local config = {
         -- disable virtual text
-        virtual_text = true,
+        virtual_text = false,
         -- show signs
         signs = {
             active = signs,
@@ -67,11 +67,7 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":Telescope lsp_implementations theme=dropdown winblend=10<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":Telescope lsp_references theme=dropdown winblend=10<CR>", opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    -- lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))
 
     vim.api.nvim_buf_set_keymap(
         bufnr,
@@ -92,6 +88,7 @@ M.on_attach = function(client, bufnr)
     end
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
+
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
